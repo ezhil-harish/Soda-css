@@ -1,0 +1,61 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.main {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    background: url(backcoco.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #FF7276;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    transition: background-color 1s, background-image 1s;
+}
+.main.hover-effect {
+    background-color: #add8e6;
+    background-image: url(backpepsi.png);
+}
+.main .product {
+    height: 200px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+    transition: 1s;
+    --left: -400px;
+}
+.main .product .soda {
+    background: var(--url) var(--left) 0, url(mockup.png) 0 0;
+    background-size: auto 100%;
+    width: 280px;
+    cursor: pointer;
+    position: absolute;
+    aspect-ratio: 1 / 2;
+    background-blend-mode: multiply;
+    transition: 1s;
+    mask-image: url(mockup.png);
+    mask-size: auto 100%;
+}
+.main .product:hover {
+    --left: 1900px;
+    --right: 0;
+}
+.main .product:hover ~ .main {
+    background-color: #21b3e3;
+    background-image: url(backpepsi.png);
+}
+
+.main .product .soda:nth-child(2) {
+    opacity: 0;
+}
+.main .product:hover .soda:nth-child(2) {
+    opacity: 1;
+}

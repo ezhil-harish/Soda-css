@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <div class="product">
+            <div class="soda" style="--url: url(coco.jpeg)"></div>
+            <div class="soda" style="--url: url(pepsi.jpg)"></div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.soda').forEach(soda => {
+    soda.addEventListener('mouseover', () => {
+        document.querySelector('.main').classList.add('hover-effect');
+    });
+    soda.addEventListener('mouseout', () => {
+        document.querySelector('.main').classList.remove('hover-effect');
+    });
+});
+
+    </script>
+</body>
+</html>
